@@ -1,0 +1,26 @@
+{
+  "name": "protractor-typescript-cucumber-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "beforeTest": "npm run webdriver-update",
+    "tsc": "tsc",
+    "clean": "rimraf tmp/",
+    "copy-feature": "cpx features/*.feature tmp/features/",
+    "test": "npm run clean && npm run tsc && npm run copy-feature && protractor tmp/config.js",
+    "webdriver-update": "node node_modules/protractor/bin/webdriver-manager update"
+  },
+  "author": "Jacek Góraj",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "cpx": "^1.5.0",
+    "cucumber": "^4.0.0",
+    "protractor": "^5.3.0",
+    "protractor-cucumber-framework": "^4.2.0",
+    "rimraf": "^2.6.2",
+    "typescript": "^2.7.2"
+  }
+}
