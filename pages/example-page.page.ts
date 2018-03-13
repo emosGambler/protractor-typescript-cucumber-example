@@ -17,10 +17,19 @@ export class HomePage {
 
     public open(): void {
         browser.get(this.url);
+        browser.waitForAngular();
     };
 
     public setName(userName: string): void {
         this.nameInput.clear();
         this.nameInput.sendKeys(userName);
+    };
+
+    public getName(): promise.Promise<string> {
+        return this.nameInput.getAttribute('value');
+    };
+
+    public getGreetings(): promise.Promise<string> {
+        return this.greeting.getText();
     };
 }

@@ -1,8 +1,13 @@
 Feature: Running Cucumber with Protractor
-    As a user of Protractor
-    I should be able to use Cucumber
-    In order to run my E2E tests
+    As a humble tester
+    I should be able to show you how to write these tests
+    In order for you to learn how to do it
 
-    Scenario: Protractor and Cucumber Test
-        Given page
+    Scenario: Entering angular home page
+        Given I enter angular home page
         Then I should see valid url
+
+    Scenario: Updating name
+        Given I type new name
+        Then I should see new name
+        And I should see greetings updated

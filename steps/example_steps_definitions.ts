@@ -4,20 +4,31 @@ import { browser } from 'protractor';
 import * as chaiAsPromised from 'chai-as-promised';
 import * as chai from 'chai';
 
-let angularHomepage: HomePage;
+let homePage: HomePage;
 chai.use(chaiAsPromised);
 const expect: any = chai.expect;
 
 Before(() => {
-    angularHomepage = new HomePage();
+    homePage = new HomePage();
 });
 
-Given(/^page$/, async function() {
-    browser.waitForAngularEnabled(false);
-    await angularHomepage.open()
+Given(/^I enter angular home page$/, async function() {
+    await homePage.open()
 });
 
 Then(/^I should see valid url$/, async function() {
-    browser.waitForAngularEnabled(false);
-    await expect(browser.getCurrentUrl()).to.eventually.equal('xD')
+    await expect(browser.getCurrentUrl()).to.eventually.equal(homePage.url);
+});
+
+Given(/^I type new name$/, async function() {
+    //name should be taken from scenario
+    await homePage.setName('jacek');
+});
+
+Then(/^I should see new name$/, async function() {
+    await expect(homePage.getName()).to.eventually.equal('jacek');
+});
+
+Then(/^I should see greetings updated$/, async function() {
+    await expect(homePage.getGreetings()).to.eventually.equal(`Hello jacek!`);
 });
