@@ -9,5 +9,4 @@ Feature: Running Cucumber with Protractor
 
     Scenario: Updating name
         Given I type new name
-        Then I should see new name
-        And I should see greetings updated
+        Then I should see greetings updated

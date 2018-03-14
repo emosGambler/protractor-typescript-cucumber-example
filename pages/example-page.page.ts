@@ -1,4 +1,5 @@
-import { $, $$, browser, element, by, promise, ElementFinder } from 'protractor';
+import { $, $$, browser, element, by, promise, ElementFinder, ExpectedConditions as EC } from 'protractor';
+var fs = require('fs');
 
 export class HomePage {
     public url: string;
@@ -17,14 +18,13 @@ export class HomePage {
 
     public open(): void {
         browser.get(this.url);
-        browser.waitForAngular();
     };
 
     public setName(userName: string): void {
         this.nameInput.clear();
         this.nameInput.sendKeys(userName);
     };
-
+    
     public getName(): promise.Promise<string> {
         return this.nameInput.getAttribute('value');
     };
