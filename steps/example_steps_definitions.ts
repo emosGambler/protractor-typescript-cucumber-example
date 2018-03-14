@@ -17,7 +17,8 @@ module.exports = function (): void {
     });
 
     this.Then(/^I should see valid url$/, async () => {
-        //await expect(browser.getCurrentUrl()).to.eventually.equal(homePage.url);
+        browser.sleep(2000);
+        await expect(browser.getCurrentUrl()).to.eventually.equal(homePage.url);
     });
 
     this.Given(/^I type new name$/, async () => {

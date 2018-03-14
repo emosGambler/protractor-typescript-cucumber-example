@@ -18,9 +18,11 @@ export class HomePage {
 
     public open(): void {
         browser.get(this.url);
+        browser.refresh();
     };
 
     public setName(userName: string): void {
+        browser.wait(EC.visibilityOf(this.nameInput), 3000);
         this.nameInput.clear();
         this.nameInput.sendKeys(userName);
     };
