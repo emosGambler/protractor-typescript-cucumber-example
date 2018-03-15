@@ -7,10 +7,6 @@ Feature: Running Cucumber with Protractor
         Given I enter angular home page
         Then I should see valid url
 
-    Scenario: Updating name
-        Given I type new name
-        Then I should see greetings updated
-
     Scenario Outline: Updating name
          Given I type new name
           Then should see greetings updated
