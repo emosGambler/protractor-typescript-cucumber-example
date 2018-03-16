@@ -23,8 +23,9 @@ export class HomePage {
 
     public setName(userName: string): void {
         browser.wait(EC.visibilityOf(this.nameInput), 3000);
-        this.nameInput.clear();
-        this.nameInput.sendKeys(userName);
+        this.nameInput.clear().then(() => {
+            this.nameInput.sendKeys(userName);
+        });
     };
     
     public getName(): promise.Promise<string> {
