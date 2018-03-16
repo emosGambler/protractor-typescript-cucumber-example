@@ -14,6 +14,7 @@ module.exports = function (): void {
     this.Before(() => {
         browser.ignoreSynchronization = true;
     });
+
     this.Given(/^I enter angular home page$/, async () => {
         await homePage.open();
     });
