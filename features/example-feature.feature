@@ -14,5 +14,5 @@ Feature: Running Cucumber with Protractor
          Examples: 
          |  name  | 
          | Jacek  | 
-         | Placek | 
+         | Placek |
          

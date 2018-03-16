@@ -1,5 +1,5 @@
 import { $, $$, browser, element, by, promise, ElementFinder, ExpectedConditions as EC } from 'protractor';
-var fs = require('fs');
+import * as timeout from './../utils/timeouts';
 
 export class HomePage {
     public url: string;
@@ -22,7 +22,7 @@ export class HomePage {
     };
 
     public setName(userName: string): void {
-        browser.wait(EC.visibilityOf(this.nameInput), 3000);
+        browser.wait(EC.visibilityOf(this.nameInput), timeout.standard);
         this.nameInput.clear().then(() => {
             this.nameInput.sendKeys(userName);
         });
