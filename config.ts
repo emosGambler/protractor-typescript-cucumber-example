@@ -1,4 +1,4 @@
-import { browser, Config } from 'protractor';
+import { Config } from 'protractor';
 
 export let config: Config = {
     baseUrl: 'https://angularjs.org/',
@@ -13,11 +13,11 @@ export let config: Config = {
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
     specs: [
-        'features/*.feature'
+        './../features/*.feature'
     ],
     cucumberOpts: {
         require: [
-            'steps/*.js'
+            './steps/*.js'
         ]
     },
     SELENIUM_PROMISE_MANAGER: false
